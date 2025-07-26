@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque Campus 2 - Bouaké, Côte d'Ivoire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-card {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-green-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-book-open text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold">Bibliothèque Campus 2</h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#accueil" class="hover:text-yellow-300 transition">Accueil</a></li>
+                    <li><a href="#livres" class="hover:text-yellow-300 transition">Livres</a></li>
+                    <li><a href="#services" class="hover:text-yellow-300 transition">Services</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-300 transition">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-2xl" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-green-900 px-4 py-2" id="mobile-menu">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="#accueil" class="block hover:text-yellow-300 transition">Accueil</a></li>
+                <li><a href="#livres" class="block hover:text-yellow-300 transition">Livres</a></li>
+                <li><a href="#services" class="block hover:text-yellow-300 transition">Services</a></li>
+                <li><a href="#contact" class="block hover:text-yellow-300 transition">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Bibliothèque Universitaire Campus 2</h1>
+            <p class="text-xl md:text-2xl mb-8">Centre de connaissance et d'apprentissage à Bouaké, Côte d'Ivoire</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#services"
+                    class="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Nos Services
+                </a>
+                <a href="#contact"
+                    class="bg-transparent hover:bg-green-700 text-white font-bold py-3 px-6 border-2 border-white rounded-lg transition duration-300">
+                    Nous Contacter
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                        alt="Bibliothèque Campus 2" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-green-800 mb-6">À propos de notre bibliothèque</h2>
+                    <p class="text-gray-700 mb-4">
+                        La bibliothèque du Campus 2 à Bouaké est un centre d'excellence pour l'apprentissage et la
+                        recherche.
+                        Nous offrons un large éventail de ressources académiques pour soutenir les étudiants, les
+                        enseignants
+                        et les chercheurs de la région.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Fondée en 2010, notre bibliothèque s'est engagée à promouvoir la culture de la lecture et à
+                        fournir
+                        un environnement propice à l'étude et à la recherche.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-book text-green-700 text-2xl mb-2"></i>
+                            <h3 class="font-bold text-green-800">+15,000 Livres</h3>
+                            <p class="text-sm text-gray-600">Collection variée</p>
+                        </div>
+                        <div class="bg-green-100 p-4 rounded-lg">
+                            <i class="fas fa-users text-green-700 text-2xl mb-2"></i>
+                            <h3 class="font-bold text-green-800">+5,000 Membres</h3>
+                            <p class="text-sm text-gray-600">Communauté active</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="livres" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Nos Collections</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Book 1 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Livre de littérature" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Littérature Africaine</h3>
+                        <p class="text-gray-600 text-sm mb-3">Collection complète des œuvres majeures de la littérature
+                            africaine.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <a href="#" class="text-green-700 hover:text-green-900 text-sm font-medium">Détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Livre scientifique" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Sciences et Technologies</h3>
+                        <p class="text-gray-600 text-sm mb-3">Ouvrages récents sur les avancées scientifiques et
+                            technologiques.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <a href="#" class="text-green-700 hover:text-green-900 text-sm font-medium">Détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Livre d'histoire" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Histoire de la Côte d'Ivoire</h3>
+                        <p class="text-gray-600 text-sm mb-3">Documents historiques sur le développement de la Côte
+                            d'Ivoire.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <a href="#" class="text-green-700 hover:text-green-900 text-sm font-medium">Détails</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Livre d'économie" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">Économie et Développement</h3>
+                        <p class="text-gray-600 text-sm mb-3">Analyses économiques et stratégies de développement en
+                            Afrique.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-yellow-500">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <a href="#" class="text-green-700 hover:text-green-900 text-sm font-medium">Détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#"
+                    class="inline-block bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Voir toute la collection
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Nos Services</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-green-700 mb-4">
+                        <i class="fas fa-book-reader text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Prêt de Livres</h3>
+                    <p class="text-gray-700">
+                        Empruntez des livres pour une durée déterminée. Nous proposons des romans, manuels académiques,
+                        revues spécialisées et bien plus encore.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-green-700 mb-4">
+                        <i class="fas fa-laptop-code text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Espace Numérique</h3>
+                    <p class="text-gray-700">
+                        Accès à des ordinateurs avec connexion internet, bases de données en ligne et ressources
+                        électroniques pour vos recherches.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-green-700 mb-4">
+                        <i class="fas fa-chalkboard-teacher text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Formations</h3>
+                    <p class="text-gray-700">
+                        Ateliers et formations sur la méthodologie de recherche, l'utilisation des ressources
+                        documentaires et les techniques de rédaction.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-green-700 mb-4">
+                        <i class="fas fa-search text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Aide à la Recherche</h3>
+                    <p class="text-gray-700">
+                        Assistance personnalisée pour vos travaux de recherche avec nos bibliothécaires spécialisés.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-green-700 mb-4">
+                        <i class="fas fa-calendar-alt text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Événements Culturels</h3>
+                    <p class="text-gray-700">
+                        Club de lecture, rencontres d'auteurs, expositions et autres activités culturelles
+                        tout au long de l'année.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-green-700 mb-4">
+                        <i class="fas fa-print text-4xl"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Services Annexes</h3>
+                    <p class="text-gray-700">
+                        Photocopie, impression, numérisation de documents et autres services pratiques
+                        pour les étudiants.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Témoignages</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Fatou Diarra"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Fatou Diarra</h4>
+                            <p class="text-gray-600 text-sm">Étudiante en Lettres</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "La bibliothèque de Campus 2 a été essentielle pour mes recherches en littérature africaine.
+                        Le personnel est toujours disponible pour aider et la collection est très complète."
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Jean Kouadio"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Jean Kouadio</h4>
+                            <p class="text-gray-600 text-sm">Professeur d'Histoire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "En tant qu'enseignant, j'apprécie particulièrement les ressources spécialisées disponibles
+                        et l'espace calme pour travailler. Une véritable richesse pour notre campus."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aminata Koné"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Aminata Koné</h4>
+                            <p class="text-gray-600 text-sm">Étudiante en Sciences</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Les ordinateurs avec accès aux revues scientifiques internationales m'ont beaucoup aidée
+                        dans mes travaux. Je recommande vivement cette bibliothèque à tous les étudiants."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-green-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous</h2>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">Informations de contact</h3>
+
+                    <div class="mb-6">
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Adresse</h4>
+                                <p>Bibliothèque Campus 2<br>Bouaké, Côte d'Ivoire</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Téléphone</h4>
+                                <p>+225 XX XX XX XX</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-envelope mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p>contact@bibliocampus2.ci</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4">Heures d'ouverture</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Lundi - Vendredi</span>
+                            <span>8h00 - 18h00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Samedi</span>
+                            <span>9h00 - 14h00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Dimanche</span>
+                            <span>Fermé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-bold mb-2">Nom complet</label>
+                            <input type="text" id="name"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                            <input type="email" id="email"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="subject" class="block text-gray-700 font-bold mb-2">Sujet</label>
+                            <input type="text" id="subject"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-4 rounded-md transition duration-300">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="h-96 bg-gray-200">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.123456789012!2d-5.030000000000001!3d7.690000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDEnMjQuMCJOIDXCwDAxJzQ4LjAiVw!5e0!3m2!1sfr!2sci!4v1234567890123!5m2!1sfr!2sci"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-book-open text-2xl"></i>
+                        <h2 class="text-xl font-bold">Bibliothèque Campus 2</h2>
+                    </div>
+                    <p class="text-sm text-green-200">
+                        Centre de connaissance et d'apprentissage<br>
+                        Bouaké, Côte d'Ivoire
+                    </p>
+                </div>
+
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-white hover:text-yellow-300 text-xl">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-300 text-xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-300 text-xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-yellow-300 text-xl">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <p class="text-sm text-green-200">
+                        &copy; 2023 Bibliothèque Campus 2. Tous droits réservés.
+                    </p>
+                    <p class="text-xs text-green-300 mt-1">
+                        Conçu avec <i class="fas fa-heart text-red-400"></i> pour la communauté universitaire
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-green-700 text-white p-3 rounded-full shadow-lg hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
